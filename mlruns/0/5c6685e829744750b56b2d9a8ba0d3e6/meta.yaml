@@ -1,0 +1,15 @@
+artifact_uri: file:///home/tmills/Project-Build-an-ML-Pipeline-Starter/Project-Build-an-ML-Pipeline-Starter/mlruns/0/5c6685e829744750b56b2d9a8ba0d3e6/artifacts
+end_time: 1729533350238
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 5c6685e829744750b56b2d9a8ba0d3e6
+run_name: bright-kit-853
+run_uuid: 5c6685e829744750b56b2d9a8ba0d3e6
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1729533291692
+status: 3
+tags: []
+user_id: tmills
