@@ -1,0 +1,15 @@
+artifact_uri: file:///home/tmills/Project-Build-an-ML-Pipeline-Starter/Project-Build-an-ML-Pipeline-Starter/mlruns/0/cba1e4774fc84bb48e44b7bfda6d6bd1/artifacts
+end_time: 1734318833540
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: cba1e4774fc84bb48e44b7bfda6d6bd1
+run_name: invincible-toad-431
+run_uuid: cba1e4774fc84bb48e44b7bfda6d6bd1
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1734318741878
+status: 3
+tags: []
+user_id: tmills
