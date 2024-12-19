@@ -1,0 +1,15 @@
+artifact_uri: file:///home/tmills/Project-Build-an-ML-Pipeline-Starter/Project-Build-an-ML-Pipeline-Starter/mlruns/0/7ffd994ac5374f169b70e6bb2e6047ce/artifacts
+end_time: 1734633675974
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 7ffd994ac5374f169b70e6bb2e6047ce
+run_name: wistful-duck-788
+run_uuid: 7ffd994ac5374f169b70e6bb2e6047ce
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1734633658042
+status: 3
+tags: []
+user_id: tmills

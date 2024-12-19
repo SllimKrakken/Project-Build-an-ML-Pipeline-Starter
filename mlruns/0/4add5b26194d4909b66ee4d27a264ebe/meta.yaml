@@ -1,0 +1,15 @@
+artifact_uri: file:///home/tmills/Project-Build-an-ML-Pipeline-Starter/Project-Build-an-ML-Pipeline-Starter/mlruns/0/4add5b26194d4909b66ee4d27a264ebe/artifacts
+end_time: 1734633825208
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 4add5b26194d4909b66ee4d27a264ebe
+run_name: judicious-whale-223
+run_uuid: 4add5b26194d4909b66ee4d27a264ebe
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1734633821479
+status: 3
+tags: []
+user_id: tmills

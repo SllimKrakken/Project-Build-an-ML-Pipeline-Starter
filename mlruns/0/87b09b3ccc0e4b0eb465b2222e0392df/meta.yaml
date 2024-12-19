@@ -1,0 +1,15 @@
+artifact_uri: file:///home/tmills/Project-Build-an-ML-Pipeline-Starter/Project-Build-an-ML-Pipeline-Starter/mlruns/0/87b09b3ccc0e4b0eb465b2222e0392df/artifacts
+end_time: 1734633676174
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 87b09b3ccc0e4b0eb465b2222e0392df
+run_name: caring-ape-607
+run_uuid: 87b09b3ccc0e4b0eb465b2222e0392df
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1734633651753
+status: 3
+tags: []
+user_id: tmills

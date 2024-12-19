@@ -1,0 +1,15 @@
+artifact_uri: file:///home/tmills/Project-Build-an-ML-Pipeline-Starter/Project-Build-an-ML-Pipeline-Starter/mlruns/0/0e200f9258a44881a874ff175e24eaab/artifacts
+end_time: 1734634127588
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 0e200f9258a44881a874ff175e24eaab
+run_name: defiant-finch-445
+run_uuid: 0e200f9258a44881a874ff175e24eaab
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1734634105329
+status: 4
+tags: []
+user_id: tmills

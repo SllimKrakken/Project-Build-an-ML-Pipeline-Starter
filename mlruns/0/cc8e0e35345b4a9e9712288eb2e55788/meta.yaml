@@ -1,0 +1,15 @@
+artifact_uri: file:///home/tmills/Project-Build-an-ML-Pipeline-Starter/Project-Build-an-ML-Pipeline-Starter/mlruns/0/cc8e0e35345b4a9e9712288eb2e55788/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: cc8e0e35345b4a9e9712288eb2e55788
+run_name: amusing-slug-166
+run_uuid: cc8e0e35345b4a9e9712288eb2e55788
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1734633861758
+status: 1
+tags: []
+user_id: tmills

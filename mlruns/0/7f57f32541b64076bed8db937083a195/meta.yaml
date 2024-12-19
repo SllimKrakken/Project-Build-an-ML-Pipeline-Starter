@@ -1,0 +1,15 @@
+artifact_uri: file:///home/tmills/Project-Build-an-ML-Pipeline-Starter/Project-Build-an-ML-Pipeline-Starter/mlruns/0/7f57f32541b64076bed8db937083a195/artifacts
+end_time: 1734633897371
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 7f57f32541b64076bed8db937083a195
+run_name: auspicious-carp-914
+run_uuid: 7f57f32541b64076bed8db937083a195
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1734633859231
+status: 4
+tags: []
+user_id: tmills
