@@ -1,0 +1,127 @@
+{
+    "os": "Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "python": "3.10.15",
+    "heartbeatAt": "2024-12-19T17:21:59.866839",
+    "startedAt": "2024-12-19T17:21:59.223468",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "<python with no main file>",
+    "codePathLocal": null,
+    "git": {
+        "remote": "https://github.com/SllimKrakken/Project-Build-an-ML-Pipeline-Starter.git",
+        "commit": "af30ba305d114dbbd6ab54a80b9596c9beeb33ee"
+    },
+    "email": "millst83@gmail.com",
+    "root": "/home/tmills/Project-Build-an-ML-Pipeline-Starter/Project-Build-an-ML-Pipeline-Starter",
+    "host": "Odin",
+    "username": "tmills",
+    "executable": "/home/tmills/miniconda3/envs/mlflow-0e540d42fec5d23cdb73972c4f7c83f9b53cd899/bin/python",
+    "cpu_count": 8,
+    "cpu_count_logical": 16,
+    "cpu_freq": {
+        "current": 3892.6909999999993,
+        "min": 0.0,
+        "max": 0.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 3892.691,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3892.691,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3892.691,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3892.691,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3892.691,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3892.691,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3892.691,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3892.691,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3892.691,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3892.691,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3892.691,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3892.691,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3892.691,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3892.691,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3892.691,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3892.691,
+            "min": 0.0,
+            "max": 0.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 1006.853931427002,
+            "used": 18.86949920654297
+        }
+    },
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 3080",
+            "memory_total": 10737418240
+        }
+    ],
+    "memory": {
+        "total": 7.7210235595703125
+    }
+}
