@@ -1,0 +1,15 @@
+artifact_uri: file:///home/tmills/Project-Build-an-ML-Pipeline-Starter/Project-Build-an-ML-Pipeline-Starter/mlruns/0/a5798838692240a3aae6848f55326649/artifacts
+end_time: 1734631133779
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: a5798838692240a3aae6848f55326649
+run_name: agreeable-zebra-162
+run_uuid: a5798838692240a3aae6848f55326649
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1734631094019
+status: 4
+tags: []
+user_id: tmills

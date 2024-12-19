@@ -1,0 +1,15 @@
+artifact_uri: file:///home/tmills/Project-Build-an-ML-Pipeline-Starter/Project-Build-an-ML-Pipeline-Starter/mlruns/0/ed34a40487934afcad90616cf846a4f5/artifacts
+end_time: 1734631802918
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: ed34a40487934afcad90616cf846a4f5
+run_name: unleashed-shad-381
+run_uuid: ed34a40487934afcad90616cf846a4f5
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1734631783031
+status: 3
+tags: []
+user_id: tmills

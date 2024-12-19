@@ -1,0 +1,15 @@
+artifact_uri: file:///home/tmills/Project-Build-an-ML-Pipeline-Starter/Project-Build-an-ML-Pipeline-Starter/mlruns/0/ebe38f87e52542ea835d1154bb1840ce/artifacts
+end_time: 1734630911853
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: ebe38f87e52542ea835d1154bb1840ce
+run_name: persistent-sheep-665
+run_uuid: ebe38f87e52542ea835d1154bb1840ce
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1734630909996
+status: 4
+tags: []
+user_id: tmills
