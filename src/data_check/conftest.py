@@ -1,6 +1,6 @@
-import pytest
-import pandas as pd
-import wandb
+import pytest # type: ignore
+import pandas as pd # type: ignore
+import wandb # type: ignore
 
 
 def pytest_addoption(parser):
