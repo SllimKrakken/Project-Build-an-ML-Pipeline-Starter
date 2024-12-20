@@ -12,6 +12,7 @@ from sklearn.metrics import mean_absolute_error # type: ignore
 from wandb_utils.log_artifact import log_artifact
 
 
+
 logging.basicConfig(level=logging.INFO, format="%(asctime)-15s %(message)s")
 logger = logging.getLogger()
 

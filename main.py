@@ -21,7 +21,8 @@ _steps = [
 
 
 # This automatically reads in the configuration
-@hydra.main(config_name='config')
+# @hydra.main(config_name='config')
+@hydra.main(version_base=None, config_path=None, config_name="config")
 def go(config: DictConfig):
 
     # Setup the wandb experiment. All runs will be grouped under this name
@@ -113,13 +114,13 @@ def go(config: DictConfig):
             )
 
         if "test_regression_model" in active_steps:
-            _ = mlflow.run(
+             
+             _ = mlflow.run(
                 f"{config['main']['components_repository']}/test_regression_model",
                 "main",
                 parameters={
                     "mlflow_model": "random_forest_export:prod",
-                    "test_dataset": "test_data.csv:latest"
-                },
+                    "test_dataset": "test_data.csv:latest"},
             )
 
 
