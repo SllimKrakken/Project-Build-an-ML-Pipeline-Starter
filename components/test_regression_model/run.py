@@ -4,10 +4,10 @@ This step takes the best model, tagged with the "prod" tag, and tests it against
 """
 import argparse
 import logging
-import wandb
-import mlflow
-import pandas as pd
-from sklearn.metrics import mean_absolute_error
+import wandb # type: ignore
+import mlflow # type: ignore
+import pandas as pd # type: ignore
+from sklearn.metrics import mean_absolute_error # type: ignore
 
 from wandb_utils.log_artifact import log_artifact
 
