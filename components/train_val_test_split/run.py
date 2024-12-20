@@ -1,13 +1,11 @@
 #!/usr/bin/env python
-"""
-This script splits the provided dataframe in test and remainder
-"""
+
 import argparse
 import logging
-import pandas as pd
-import wandb
+import pandas as pd # type: ignore
+import wandb # type: ignore
 import tempfile
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import train_test_split # type: ignore
 from wandb_utils.log_artifact import log_artifact
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)-15s %(message)s")
