@@ -10,14 +10,15 @@ import matplotlib.pyplot as plt # type: ignore
 
 import mlflow # type: ignore
 import json
-from mlflow.models import infer_signature # type: ignore
+
 import pandas as pd # type: ignore
 import numpy as np # type: ignore
+from mlflow.models import infer_signature # type: ignore
 from sklearn.compose import ColumnTransformer # type: ignore
 from sklearn.feature_extraction.text import TfidfVectorizer # type: ignore
 from sklearn.impute import SimpleImputer # type: ignore
 from sklearn.model_selection import train_test_split # type: ignore
-from sklearn.preprocessing import OrdinalEncoder, FunctionTransformer, OneHotEncoder # type: ignore
+from sklearn.preprocessing import OrdinalEncoder, OneHotEncoder, FunctionTransformer # type: ignore
 
 import wandb # type: ignore
 from sklearn.ensemble import RandomForestRegressor # type: ignore
@@ -51,10 +52,11 @@ def go(args):
     # Fix the random seed for the Random Forest, so we get reproducible results
     rf_config['random_state'] = args.random_seed
 
-    # Use run.use_artifact(...).file() to get the train and validation artifact
-    # and save the returned path in train_local_pat
+    # Get the train and validation artifact (args.trainval_artifact)
+    # and save the returned path in train_local_path
     trainval_local_path = run.use_artifact(args.trainval_artifact).file()
-   
+
+
     X = pd.read_csv(trainval_local_path)
     y = X.pop("price")  # this removes the column "price" from X and puts it into y
 
@@ -72,6 +74,10 @@ def go(args):
     logger.info("Fitting")
     sk_pipe.fit(X_train, y_train)
 
+    # Preprocessing
+    logger.info("Preprocessing validation set")
+    X_val_preprocessed = sk_pipe['preprocessor'].transform(X_val)
+
     # Compute r2 and MAE
     logger.info("Scoring")
     r_squared = sk_pipe.score(X_val, y_val)
@@ -88,7 +94,9 @@ def go(args):
     if os.path.exists("random_forest_dir"):
         shutil.rmtree("random_forest_dir")
 
-    signature = infer_signature(X_val[processed_features], y_pred)
+    # Save the sk_pipe pipeline as a mlflow.sklearn model in the directory "random_forest_dir"
+    # Get the columns that we are really using from the pipeline
+    signature = infer_signature(X_val_preprocessed, y_pred)
 
     mlflow.sklearn.save_model(
         sk_pipe,
@@ -96,34 +104,37 @@ def go(args):
         serialization_format=mlflow.sklearn.SERIALIZATION_FORMAT_CLOUDPICKLE,
         signature=signature,
         input_example=X_val.iloc[:2],
-     )
+    )
 
     # Upload the model we just exported to W&B
     artifact = wandb.Artifact(
         args.output_artifact,
-        type = 'model_export',
-        description = 'Trained ranfom forest artifact',
-        metadata = rf_config
+        type="model_export",
+        description="Random Forest pipeline export",
     )
-    artifact.add_dir('random_forest_dir')
+    artifact.add_dir("random_forest_dir")
+
     run.log_artifact(artifact)
+
+    # Make sure the artifact is uploaded before the temp dir
+    # gets deleted
+    artifact.wait()
 
     # Plot feature importance
     fig_feat_imp = plot_feature_importance(sk_pipe, processed_features)
 
-    
-    # Here we save variable r_squared under the "r2" key
+    # Here we save r_squared under the "r2" key
     run.summary['r2'] = r_squared
+
+    # Now log the variable "mae" under the key "mae".
     run.summary['mae'] = mae
 
-    
-    # Upload to W&B the feture importance visualization
+    # Upload to W&B the feature importance visualization
     run.log(
         {
           "feature_importance": wandb.Image(fig_feat_imp),
         }
     )
-
 
 def plot_feature_importance(pipe, feat_names):
     # We collect the feature importance for all non-nlp features first
@@ -152,7 +163,6 @@ def get_inference_pipeline(rf_config, max_tfidf_features):
     # (nor during training). That is not true for neighbourhood_group
     ordinal_categorical_preproc = OrdinalEncoder()
 
-    
     # Build a pipeline with two steps:
     # 1 - A SimpleImputer(strategy="most_frequent") to impute missing values
     # 2 - A OneHotEncoder() step to encode the variable
@@ -160,7 +170,6 @@ def get_inference_pipeline(rf_config, max_tfidf_features):
         SimpleImputer(strategy="most_frequent"),
         OneHotEncoder()
     )
-    
 
     # Let's impute the numerical columns to make sure we can handle missing values
     # (note that we do not scale because the RF algorithm does not need that)
@@ -196,7 +205,6 @@ def get_inference_pipeline(rf_config, max_tfidf_features):
         ),
     )
 
-    # Let's put everything together
     preprocessor = ColumnTransformer(
         transformers=[
             ("ordinal_cat", ordinal_categorical_preproc, ordinal_categorical),
@@ -211,18 +219,20 @@ def get_inference_pipeline(rf_config, max_tfidf_features):
     processed_features = ordinal_categorical + non_ordinal_categorical + zero_imputed + ["last_review", "name"]
 
     # Create random forest
-    random_forest = RandomForestRegressor(**rf_config)
+    random_Forest = RandomForestRegressor(**rf_config)
 
     # Create the inference pipeline. The pipeline must have 2 steps: a step called "preprocessor" applying the
+    # ColumnTransformer instance that we saved in the `preprocessor` variable, and a step called "random_forest"
+    # with the random forest instance that we just saved in the `random_forest` variable.
     sk_pipe = Pipeline(
-        steps =[
-        ("preprocessor", preprocessor),
-        ("random_forest", random_forest)
-        ]
+            steps=[
+                ("preprocessor", preprocessor),
+                ("random_forest", random_Forest)
+            ]
     )
 
     return sk_pipe, processed_features
-    
+
 
 if __name__ == "__main__":
 
